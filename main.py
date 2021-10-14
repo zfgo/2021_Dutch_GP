@@ -13,7 +13,15 @@ from matplotlib.pyplot import figure
 # Setup plotting
 plotting.setup_mpl()
 # Enable the cache
-ff1.Cache.enable_cache(cache_dir="INSERT PATH",  # TODO INSERT PATH
+
+path_file = "path.txt"
+
+with open(path_file, 'r') as f:
+    path = f.read()
+
+# path = <INSERT YOUR CACHE PATH HERE>
+
+ff1.Cache.enable_cache(cache_dir=path,
                        ignore_version=False,
                        force_renew=False,
                        use_requests_cache=True)
